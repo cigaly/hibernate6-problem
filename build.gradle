@@ -1,0 +1,24 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.hibernate.orm:hibernate-core:6.1.7.Final'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
+
+    testRuntimeOnly 'io.hypersistence:hypersistence-utils-hibernate-60:3.2.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.2'
+    testRuntimeOnly 'com.fasterxml.jackson.core:jackson-databind:2.14.2'
+    testRuntimeOnly 'org.postgresql:postgresql:42.6.0'
+}
+
+test {
+    useJUnitPlatform()
+}
