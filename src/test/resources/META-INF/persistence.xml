@@ -11,7 +11,7 @@
 
         <properties>
             <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver"/>
-            <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://debian7.biberius.net:5432/hibernate_orm_test"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/hibernate_orm_test"/>
             <property name="jakarta.persistence.jdbc.user" value="hibernate_orm_test"/>
             <property name="jakarta.persistence.jdbc.password" value="hibernate_orm_test"/>
             <!--<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>-->
