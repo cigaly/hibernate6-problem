@@ -1,5 +1,6 @@
 package org.example;
 
+import io.hypersistence.utils.hibernate.type.basic.Inet;
 import jakarta.persistence.Persistence;
 import org.hibernate.Session;
 import org.junit.jupiter.api.Test;
@@ -16,6 +17,7 @@ public class PeriodTest {
 
         final var p1 = new P();
         p1.setPeriod(Period.ofWeeks(3));
+        p1.setInet(new Inet("192.168.56.42"));
         manager.persist(p1);
         tx.commit();
     }

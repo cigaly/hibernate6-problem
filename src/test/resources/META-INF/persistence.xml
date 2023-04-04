@@ -14,11 +14,11 @@
             <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://debian7.biberius.net:5432/hibernate_orm_test"/>
             <property name="jakarta.persistence.jdbc.user" value="hibernate_orm_test"/>
             <property name="jakarta.persistence.jdbc.password" value="hibernate_orm_test"/>
-            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
+            <!--<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>-->
+            <property name="hibernate.dialect" value="org.example.HyperPostgreSQLDialect"/>
 
-            <property name="hibernate.hbm2ddl.auto" value="update"/>
-            <!-- OR -->
-            <!--<property name="jakarta.persistence.schema-generation.database.action" value="create"/>-->
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.hbm2ddl.auto" value="create"/>
         </properties>
     </persistence-unit>
 </persistence>

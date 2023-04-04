@@ -10,7 +10,7 @@ import java.time.Period;
 
 import static jakarta.persistence.GenerationType.IDENTITY;
 
-@Entity(name = "P")
+@Entity(name = "pe")
 @Table(name = "pe")
 public class P {
     @Id
@@ -20,6 +20,9 @@ public class P {
 
     @Column
     private Period period;
+
+    @Column
+    private io.hypersistence.utils.hibernate.type.basic.Inet inet;
 
     public Integer getId() {
         return id;
@@ -37,8 +40,16 @@ public class P {
         this.period = period;
     }
 
+    public io.hypersistence.utils.hibernate.type.basic.Inet getInet() {
+        return inet;
+    }
+
+    public void setInet(io.hypersistence.utils.hibernate.type.basic.Inet inet) {
+        this.inet = inet;
+    }
+
     @Override
     public String toString() {
-        return "P{id=%d, period=%s}".formatted(id, period);
+        return "P{id=%d, period=%s, inet=%s}".formatted(id, period, inet);
     }
 }
