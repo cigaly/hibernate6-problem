@@ -7,15 +7,14 @@
     <persistence-unit name="manager">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
-        <class>org.example.P</class>
+        <!--<class>org.example.P</class>-->
 
         <properties>
             <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver"/>
             <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/hibernate_orm_test"/>
             <property name="jakarta.persistence.jdbc.user" value="hibernate_orm_test"/>
             <property name="jakarta.persistence.jdbc.password" value="hibernate_orm_test"/>
-            <!--<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>-->
-            <property name="hibernate.dialect" value="org.example.HyperPostgreSQLDialect"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
 
             <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.hbm2ddl.auto" value="create"/>
