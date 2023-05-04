@@ -7,7 +7,7 @@
 
     <Appenders>
         <RollingFile name="testlog"
-                     fileName="${sys:test.logs.dir}/notifications_test.log"
+                     fileName="${sys:test.logs.dir}/test.log"
                      filePattern="${sys:test.logs.dir}/$${date:yyyy-MM}/notifications_test%d{-yyyy-MMMM-dd-HH}-%i.log.gz">
             <ThresholdFilter level="DEBUG"/>
             <PatternLayout>
@@ -52,7 +52,7 @@
             <appender-ref ref="testlog"/>
         </Logger>
 
-        <Logger name="net.biberius" additivity="false" level="debug">
+        <Logger name="org.example" additivity="false" level="debug">
             <appender-ref ref="testlog"/>
         </Logger>
 
@@ -60,51 +60,7 @@
             <appender-ref ref="testlog"/>
         </Logger>
 
-        <Logger name="org.springframework.test" additivity="false" level="info">   <!-- WAS trace -->
-            <appender-ref ref="testlog"/>
-        </Logger>
-
-        <Logger name="org.springframework" additivity="false" level="info"> <!-- WAS debug -->
-            <appender-ref ref="testlog"/>
-        </Logger>
-
-        <Logger name="org.easymock" additivity="false" level="trace">
-            <appender-ref ref="testlog"/>
-        </Logger>
-
-        <Logger name="net.sf.ehcache" additivity="false" level="info">
-            <appender-ref ref="testlog"/>
-        </Logger>
-
         <Logger name="hsqldb" additivity="false" level="info">
-            <appender-ref ref="testlog"/>
-        </Logger>
-
-        <Logger name="com.gargoylesoftware" additivity="false" level="info">
-            <appender-ref ref="testlog"/>
-        </Logger>
-
-        <Logger name="com.fasterxml.jackson" additivity="false" level="debug">
-            <appender-ref ref="testlog"/>
-        </Logger>
-
-        <Logger name="org.apache.http.impl.client" additivity="false" level="info">
-            <appender-ref ref="testlog"/>
-        </Logger>
-
-        <Logger name="org.apache.http.headers" additivity="false" level="info">
-            <appender-ref ref="testlog"/>
-        </Logger>
-
-        <Logger name="org.hibernate.boot.model.source.internal.hbm.AttributesHelper" additivity="false" level="info">   <!-- WAS trace -->
-            <appender-ref ref="testlog"/>
-        </Logger>
-
-        <Logger name="org.springframework.test.context.cache" additivity="false" level="info">  <!-- WAS trace -->
-            <appender-ref ref="testlog"/>
-        </Logger>
-
-        <Logger name="net.biberius.spring.jdbc.datasource.init" additivity="false" level="info">
             <appender-ref ref="testlog"/>
         </Logger>
 
@@ -114,10 +70,6 @@
 
         <Logger name="org.hibernate.SQL" additivity="false" level="debug">
             <appender-ref ref="sql"/>
-        </Logger>
-
-        <Logger additivity="false" level="info" name="net.ttddyy.dsproxy.listener.logging">
-            <AppenderRef ref="sql" />
         </Logger>
     </Loggers>
 </Configuration>
