@@ -18,12 +18,10 @@
             -->
             <!--<property name="hibernate.dialect" value="org.example.HyperPostgreSQLDialect"/>-->
 
-            <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
             <!--<property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://debian7.biberius.net/hibernate_orm_test?useSSL=false&serverTimezone=Europe%2FZagreb"/>-->
+            <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
             <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://debian7.biberius.net/hibernate_orm_test?useSSL=false"/>
-
             <!--<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>-->
-            <property name="hibernate.dialect" value="org.example.MySQLDialectFix"/>
             <property name="jakarta.persistence.jdbc.user" value="hibernate_orm_test"/>
             <property name="jakarta.persistence.jdbc.password" value="hibernate_orm_test"/>
 

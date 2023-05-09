@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Configuration>
+
+    <Properties>
+        <Property name="TestName">NoName</Property>
+    </Properties>
+
+    <Appenders>
+        <RollingFile name="testlog"
+                     fileName="${sys:test.logs.dir}/test.log"
+                     filePattern="${sys:test.logs.dir}/$${date:yyyy-MM}/notifications_test%d{-yyyy-MMMM-dd-HH}-%i.log.gz">
+            <ThresholdFilter level="DEBUG"/>
+            <PatternLayout>
+                <Pattern>%d{ISO8601,Europe/Zagreb} %c %-5p [%t]: %m%n</Pattern>
+            </PatternLayout>
+            <Policies>
+                <OnStartupTriggeringPolicy/>
+            </Policies>
+        </RollingFile>
+
+        <RollingFile name="sql"
+                     fileName="${sys:test.logs.dir}/sql_test.log"
+                     filePattern="${sys:test.logs.dir}/$${date:yyyy-MM}/sql_test%d{-yyyy-MMMM-dd-HH}-%i.log.gz">
+            <ThresholdFilter level="DEBUG"/>
+            <PatternLayout>
+                <Pattern>%d{ISO8601,Europe/Zagreb} %c %-5p [%t]: %m%n</Pattern>
+            </PatternLayout>
+            <Policies>
+                <OnStartupTriggeringPolicy/>
+            </Policies>
+        </RollingFile>
+    </Appenders>
+
+    <Loggers>
+        <Logger name="test" additivity="false" level="trace">
+            <appender-ref ref="testlog"/>
+        </Logger>
+
+        <Logger name="Deprecation" additivity="false" level="trace">
+            <appender-ref ref="testlog"/>
+        </Logger>
+
+        <Logger name="org.hibernate" additivity="false" level="info">
+            <appender-ref ref="testlog"/>
+        </Logger>
+
+        <Logger name="org.hibernate.tool.hbm2ddl" additivity="false" level="debug"> <!-- WAS trace -->
+            <appender-ref ref="testlog"/>
+        </Logger>
+
+        <Logger name="org.hibernate.tool.schema.internal" additivity="false" level="debug"> <!-- WAS trace -->
+            <appender-ref ref="testlog"/>
+        </Logger>
+
+        <Logger name="org.example" additivity="false" level="debug">
+            <appender-ref ref="testlog"/>
+        </Logger>
+
+        <Logger name="org" additivity="false" level="warn">
+            <appender-ref ref="testlog"/>
+        </Logger>
+
+        <Logger name="hsqldb" additivity="false" level="info">
+            <appender-ref ref="testlog"/>
+        </Logger>
+
+        <Logger name="SQL" additivity="false" level="debug">
+            <appender-ref ref="sql"/>
+        </Logger>
+
+        <Logger name="org.hibernate.SQL" additivity="false" level="debug">
+            <appender-ref ref="sql"/>
+        </Logger>
+    </Loggers>
+</Configuration>
