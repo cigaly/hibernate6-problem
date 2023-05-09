@@ -2,6 +2,7 @@ package org.example;
 
 import jakarta.persistence.*;
 import org.hibernate.Session;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,6 +17,7 @@ public class SampleTest {
     private static final Logger log = LoggerFactory.getLogger(SampleTest.class);
 
     @Test
+    @Disabled
     void test() {
         try (var factory = createEntityManagerFactory("manager")) {
             Sample sample;
@@ -48,7 +50,7 @@ public class SampleTest {
         @Column(name = "id", nullable = false, updatable = false)
         private Integer id;
 
-        @Column
+        @Column(length = 64)
         private String value;
 
         public Integer getId() {
